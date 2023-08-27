@@ -28,25 +28,37 @@ This project outlines the implementation of Active Directory within Azure Virtua
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/EPAdQzH.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+First, I set up the resource group. Next, I created the first virtual machine named "DC-1," which will serve as the domain controller. Following that, I proceeded to create the second virtual machine named "client-1." I then associated "client-1" with the virtual network of "DC-1." Finally, I configured the Private IP address of "DC-1" to be static.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/4E8VGpF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+After logging into DC-1, I accessed the Windows Firewall settings and enabled the inbound rule for ICMPv4. Subsequently, I logged in to client-1 and opened the command line. From there, I obtained the private IP address of DC-1 and proceeded to ping it for connectivity testing.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/4OHaPJr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Within DC-1, I navigated to Server Manager and selected "Add Roles." Following that, I installed Active Directory Domain Services and subsequently promoted the server to function as a domain controller.
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/Ng5UOtX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+I launched PowerShell ISE with administrator privileges and used a script to create users within the "employee" folder that I had previously set up in files.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/5FTtIYY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
